@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+    <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app" v-cloak>
+    <div class="grid">
+        <input type="text" class="text" v-model="res" placeholder="0">
+        <button @click="charinput(num)" class="btn num" v-for="num in 10">{{num%10}}</button>
+        <button @click="modeinput(op)" class="btn op" v-for="op in operations">{{op}}</button>
+        <button @click="reset" class="btn danger">C</button>
+        <button @click="modeinput(t)" class="btn op">.</button>
+        <button @click="calc" class="btn op">=</button>
+        <button @click="pop" class="btn danger">CE</button>
+    </div>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="script.js"></script>
+</body>
+</html>
